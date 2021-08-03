@@ -89,6 +89,7 @@ function tween(obj, sec, sty, dir, custom)
 end
 
 function ui:begin_task(data)
+	print("begun UI data task")
 	data = _G.settings
 	
 	
