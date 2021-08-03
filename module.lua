@@ -5,7 +5,8 @@ library = {
 }
 --// Data variables
 	
-settings = library.settings
+settings = _G.settings
+library.settings = settings
 
 --// Global variables
 
