@@ -250,7 +250,7 @@ pcall(function()
 	mathFrame.Position = UDim2.new(0, 0, 0.153153151, 0)
 	mathFrame.Size = UDim2.new(0, 436, 0, 188)
 	mathFrame.Visible = false
-	mathFrame.AnchorPoint = Vector3.new(0.5, 0.5)
+	mathFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
 	answerbin.Name = "answerbin"
 	answerbin.Parent = mathFrame
