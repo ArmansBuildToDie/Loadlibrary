@@ -40,12 +40,12 @@ end
 --// Creating the load function after logging into the gui.
 	
 function library:gui(callback)
-	callback = callback or function() end)
+	callback = callback or function() end
 
 	local _, error = pcall(function()
 		getgenv().loadClick = function()
 			pcall(callback)
-		end)
+		end
 	end)
 
 	if error then
