@@ -152,7 +152,7 @@ pcall(function()
 	loadingFrame.Parent = MainFrame
 	loadingFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	loadingFrame.BorderSizePixel = 0
-	loadingFrame.Position = UDim2.new(0, 0, 0.153153151, 0)
+	loadingFrame.Position = UDim2.new(0.5, 0,0.577, 0)
 	loadingFrame.Size = UDim2.new(0, 436, 0, 188)
 	loadingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 		
@@ -361,7 +361,7 @@ pcall(function()
 	
 	MainFrame.ClipsDescendants = true
 	local startingPos = UDim2.new(1, 0,0.153, 0)
-	toPosition = UDim2.new(0, 0,0.153, 0)
+	toPosition = UDim2.new(0.5, 0,0.577, 0)
 	
 	if customKey == true then
 		getKey:Destroy()
@@ -411,7 +411,7 @@ pcall(function()
 							mathFrame.Position = UDim2.new(1, 0,0.153, 0)
 							mathFrame.Visible = true
 							wait(.4)
-							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0, 0,0.153, 0)})
+							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0.5, 0,0.577, 0)})
 							wait(.4)
 							
 							local operators = {"*", "/", "+", "-"}
@@ -465,7 +465,7 @@ pcall(function()
 							mathFrame.Position = UDim2.new(1, 0,0.153, 0)
 							mathFrame.Visible = true
 							wait(.4)
-							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0, 0,0.153, 0)})
+							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0.5, 0,0.577, 0)})
 							wait(.4)
 
 							local operators = {"*", "/", "+", "-"}
