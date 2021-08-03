@@ -328,7 +328,7 @@ pcall(function()
 	
 	local baseSize = UDim2.new(0, 16,0, 15)
 	local baseColor = Color3.fromRGB(53, 53, 53)
-	print("loaded this part or something")
+
 	for i = 1,3 do
 		tween(img3, .4, "Quart", "InOut", {Size = UDim2.new(0, 16,0, 28), BackgroundColor3 = Color3.new(0.556863, 0.996078, 1)})
 		wait(.4)
@@ -349,13 +349,13 @@ pcall(function()
 	loadingFrame.ClipsDescendants = true
 	loadingFrame.Visible = true
 	
-	local toPosition = UDim2.new(0.455, 0,-0.2, 0)
+	local toPosition = UDim2.new(0.5, 0,0.577, 0)
 	
 	tween(img3, .3, "Bounce", "Out", {Position = UDim2.new(img3.Position.X,0, -0.2,0), BackgroundTransparency = 1})
 	wait(.3)
 	tween(img2, .3, "Bounce", "Out", {Position = UDim2.new(img2.Position.X,0, -0.2,0), BackgroundTransparency = 1})
 	wait(.3)
-	tween(img1, .3, "Bounce", "Out", {Position = UDim2.new(img2.Position.X,0, -0.2,0), BackgroundTransparency = 1})
+	tween(img1, .3, "Bounce", "Out", {Position = UDim2.new(img1.Position.X,0, -0.2,0), BackgroundTransparency = 1})
 	
 	wait(.4)
 	loadingFrame:Destroy()
