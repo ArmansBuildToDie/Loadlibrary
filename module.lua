@@ -41,6 +41,7 @@ end
 --// Creating the load function after logging into the gui.
 	
 function library:gui(callback)
+	print("Initiated Callback")
 	callback = callback or function() end
 
 	local _, error = pcall(function()
