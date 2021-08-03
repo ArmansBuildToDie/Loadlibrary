@@ -7,7 +7,7 @@ settings = library.settings
 
 --// Global variables
 
-_G.currentVersion = 0.0.1;
+currentVersion = 0.0.1;
 	
 --// Data packets
 	
@@ -57,13 +57,13 @@ end
 
 --// Checking version to see if it's up to date.
 
-if settings._version ~= _G.currentVersion then
+if settings._version ~= currentVersion then
 	print[[
 			POTENTIAL INTERNAL-API BUG ⚠
 			The version you are using is dated! 
 	]]
 
-	print("Please change the '_version' setting to ".._G.currentVersion.."!")
+	print("Please change the '_version' setting to "..currentVersion.."!")
 end
 
 print[[
