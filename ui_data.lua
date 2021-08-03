@@ -349,8 +349,6 @@ pcall(function()
 	loadingFrame.ClipsDescendants = true
 	loadingFrame.Visible = true
 	
-	local toPosition = UDim2.new(0.5, 0,0.577, 0)
-	
 	tween(img3, .3, "Bounce", "Out", {Position = UDim2.new(img3.Position.X,0, -0.2,0), BackgroundTransparency = 1})
 	wait(.3)
 	tween(img2, .3, "Bounce", "Out", {Position = UDim2.new(img2.Position.X,0, -0.2,0), BackgroundTransparency = 1})
@@ -361,13 +359,13 @@ pcall(function()
 	loadingFrame:Destroy()
 	
 	MainFrame.ClipsDescendants = true
-	local startingPos = UDim2.new(1, 0,0.153, 0)
+	local startingPos = UDim2.new(0.5, 0,0.577, 0)
 	toPosition = UDim2.new(0.5, 0,0.577, 0)
 	
 	if customKey == true then
 		getKey:Destroy()
 	end
-	mainGui.Position = UDim2.new(1, 0,0.153, 0)
+	mainGui.Position = startingPos
 	mainGui.Visible = true
 	
 	tween(mainGui, .3, "Bounce", "In", {Position = UDim2.new(toPosition)})
