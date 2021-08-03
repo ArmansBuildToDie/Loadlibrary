@@ -323,7 +323,7 @@ pcall(function()
 	MainFrame.Selectable = true
 	MainFrame.Draggable = true
 	
-	Title.text = title.." by "..credits
+	Title.Text = title.." by "..credits
 	
 	local baseSize = UDim2.new(0, 16,0, 15)
 	local baseColor = Color3.fromRGB(53, 53, 53)
