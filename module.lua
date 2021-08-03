@@ -1,5 +1,3 @@
-print("Found source 003.")
-
 library = {
   settings = {}
 }
@@ -11,7 +9,7 @@ library.settings = settings
 --// Global variables
 
 currentVersion = "0.0.1";
-print("here")
+
 --// Searching for blacklisted users
 	
 function blacklisted()
@@ -53,7 +51,6 @@ function library:gui(callback)
 		]]
 	end
 end
-print("here4")
 --// Checking version to see if it's up to date.
 
 spawn(function()
@@ -66,7 +63,7 @@ spawn(function()
     	print("Please change the '_version' setting to "..currentVersion.."!")
     end
 end)
-print("here5")
+
 print[[
 
   _   ___   ___  
@@ -82,5 +79,7 @@ print[[
 	
 loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lua"),true ))()
 loginUI:begin_task(settings)
-
+for _,v in pairs(settings) do
+	print(settings)	
+end
 return library;
