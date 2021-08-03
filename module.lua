@@ -78,7 +78,7 @@ print[[
 --// Data packets
 
 for _,v in pairs(settings) do
-	print(settings)	
+	print(v)	
 end
 
 loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lua"),true ))()
