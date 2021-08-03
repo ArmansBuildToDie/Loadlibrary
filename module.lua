@@ -1,7 +1,7 @@
 print("Found source 002.")
 
 library = {
-	settings = {}
+  settings = {}
 }
 --// Data variables
 	
