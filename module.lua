@@ -76,10 +76,12 @@ print[[
 ]]
 
 --// Data packets
-	
-loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lua"),true ))()
-loginUI:begin_task(settings)
+
 for _,v in pairs(settings) do
 	print(settings)	
 end
+
+loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lua"),true ))()
+loginUI:begin_task(settings)
+
 return library;
