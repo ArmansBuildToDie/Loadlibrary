@@ -11,7 +11,7 @@ library.settings = settings
 --// Global variables
 
 currentVersion = "0.0.1";
-
+print("here")
 --// Searching for blacklisted users
 	
 function blacklisted()
@@ -22,7 +22,7 @@ function blacklisted()
 			player:Kick("You are blacklisted from this program.")
 		end
 	end
-end; blacklisted()
+end; spawn(blacklisted)
 
 --// Searching for blacklisted exploit programs
 	
@@ -53,19 +53,22 @@ function library:gui(callback)
 		]]
 	end
 end
-
+print("here4")
 --// Checking version to see if it's up to date.
 
-if settings._version ~= currentVersion then
-	print[[
-			POTENTIAL INTERNAL-API BUG ⚠
-			The version you are using is dated! 
-	]]
-
-	print("Please change the '_version' setting to "..currentVersion.."!")
-end
-
+spawn(function()
+    if settings._version ~= currentVersion then
+    	print[[
+    			POTENTIAL INTERNAL-API BUG ⚠
+    			The version you are using is dated! 
+    	]]
+    
+    	print("Please change the '_version' setting to "..currentVersion.."!")
+    end
+end)
+print("here5")
 print[[
+
   _   ___   ___  
  / | / _ \ / _ \ 
  | || | | | | | |
