@@ -319,17 +319,10 @@ pcall(function()
 
 	-- Scripts:
 
-	local function BIFP_fake_script() -- MainFrame.DataManager 
-		local script = Instance.new('LocalScript', MainFrame)
-
-		local function dragify()
-			script.Parent.Parent.Active = true
-			script.Parent.Parent.Selectable = true
-			script.Parent.Parent.Draggable = true
-		end
-		dragify()
-
-	end
+	MainFrame.Active = true
+	MainFrame.Selectable = true
+	MainFrame.Draggable = true
+		
 	coroutine.wrap(BIFP_fake_script)()
 	
 	
