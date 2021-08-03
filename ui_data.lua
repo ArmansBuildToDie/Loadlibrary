@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded()
-print("Here")
+
 local ui = {
 	settings = {}
 }
@@ -89,8 +89,6 @@ function tween(obj, sec, sty, dir, custom)
 	tween:Create(obj, TweenInfo.new(sec, Enum.EasingStyle[sty], Enum.EasingDirection[dir]),custom):Play()
 end
 
---function ui:begin_task(data)
-	print("begun UI data task")
 	data = _G.settings
 	
 	
@@ -132,7 +130,8 @@ pcall(function()
 	MainFrame.BorderSizePixel = 0
 	MainFrame.Position = UDim2.new(0.5, 0, 0.451132298, 0)
 	MainFrame.Size = UDim2.new(0, 436, 0, 222)
-
+	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+		
 	Title.Name = "Title"
 	Title.Parent = MainFrame
 	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -155,7 +154,8 @@ pcall(function()
 	loadingFrame.BorderSizePixel = 0
 	loadingFrame.Position = UDim2.new(0, 0, 0.153153151, 0)
 	loadingFrame.Size = UDim2.new(0, 436, 0, 188)
-
+	loadingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+		
 	img2.Name = "img2"
 	img2.Parent = loadingFrame
 	img2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -250,7 +250,7 @@ pcall(function()
 	mathFrame.Position = UDim2.new(0, 0, 0.153153151, 0)
 	mathFrame.Size = UDim2.new(0, 436, 0, 188)
 	mathFrame.Visible = false
-
+	mathFrame.AnchorPoint = Vector3.new(0.5, 0.5)
 	answerbin.Name = "answerbin"
 	answerbin.Parent = mathFrame
 	answerbin.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -328,7 +328,7 @@ pcall(function()
 	local baseSize = UDim2.new(0, 16,0, 15)
 	local baseColor = Color3.fromRGB(53, 53, 53)
 	
-	for i = 1,5 do
+	for i = 1,3 do
 		tween(img3, .4, "Quart", "InOut", {Size = UDim2.new(0, 16,0, 28), BackgroundColor3 = Color3.new(0.556863, 0.996078, 1)})
 		wait(.4)
 		tween(img3, .4, "Quart", "InOut", {Size = UDim2.new(0, 16,0, 15), BackgroundColor3 = Color3.fromRGB(53, 53, 53)})
@@ -519,6 +519,6 @@ pcall(function()
 			end
 		end;
 	end)
---end
+
 end)
 return ui;
