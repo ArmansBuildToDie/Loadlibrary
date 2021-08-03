@@ -11,14 +11,15 @@ settings = _G.settings
 wait()
 
 keyExpires = settings.keyDetails.KeyExpires
-customKey = settings.CustomKey[1]	
-customPass = settings.CustomKey[2]
+customKey = settings.keyDetails.CustomKey[1]	
+customPass = settings.keyDetails.CustomKey[2]
 
-twoStep = settings.twoStepAuth[1]
+twoStep = settings.twoStepAuth.Enabled
 
-credits = settings.ownership[2]
-title = settings.ownership[1]
+credits = settings.ownership.loginCredits
+title = settings.ownership.loginTitle 
 
+print("located settings successfully.")
 --// Setting up functions
 
 local globalKey
