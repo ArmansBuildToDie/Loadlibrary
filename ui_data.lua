@@ -94,7 +94,7 @@ end
 	data = _G.settings
 	
 	
-
+pcall(function()
 	local logGUi = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local Title = Instance.new("TextLabel")
@@ -530,5 +530,5 @@ end
 		end;
 	end)
 --end
-
+end)
 return ui;
