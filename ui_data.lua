@@ -7,6 +7,7 @@ local ui = {
 --// Setup variables
 
 settings = _G.settings
+data = _G.settings
 
 wait()
 
@@ -58,7 +59,7 @@ function generateKey(keybin)
 			if keyData and keyData.expires == false then
 				globalKey = keyData.key
 			end
-		else
+		if not readfile("data."..title) then
 			local expireTime = os.time + 259200
 			local newKey = http:GenerateGUID(true)
 			local data = {
@@ -86,7 +87,7 @@ function tween(obj, sec, sty, dir, custom)
 	tween:Create(obj, TweenInfo.new(sec, Enum.EasingStyle[sty], Enum.EasingDirection[dir]),custom):Play()
 end
 
-	data = _G.settings
+	
 	
 pcall(function()	
 	local logGUi = Instance.new("ScreenGui")
