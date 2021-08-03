@@ -90,6 +90,11 @@ end
 	
 	
 pcall(function()	
+	-- Gui to Lua
+	-- Version: 3.2
+
+	-- Instances:
+
 	local logGUi = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local Title = Instance.new("TextLabel")
@@ -125,10 +130,10 @@ pcall(function()
 	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	MainFrame.BorderSizePixel = 0
+	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.5, 0, 0.451132298, 0)
 	MainFrame.Size = UDim2.new(0, 436, 0, 222)
-	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-		
+
 	Title.Name = "Title"
 	Title.Parent = MainFrame
 	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -147,12 +152,13 @@ pcall(function()
 
 	loadingFrame.Name = "loadingFrame"
 	loadingFrame.Parent = MainFrame
+	loadingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	loadingFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	loadingFrame.BorderSizePixel = 0
-	loadingFrame.Position = UDim2.new(0.5, 0,0.577, 0)
+	loadingFrame.ClipsDescendants = true
+	loadingFrame.Position = UDim2.new(0.5, 0, 0.576576591, 0)
 	loadingFrame.Size = UDim2.new(0, 436, 0, 188)
-	loadingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-		
+
 	img2.Name = "img2"
 	img2.Parent = loadingFrame
 	img2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -191,12 +197,13 @@ pcall(function()
 
 	mainGui.Name = "mainGui"
 	mainGui.Parent = MainFrame
+	mainGui.AnchorPoint = Vector2.new(0.5, 0.5)
 	mainGui.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	mainGui.BorderSizePixel = 0
-	mainGui.Position = UDim2.new(0, 0, 0.153153151, 0)
+	mainGui.ClipsDescendants = true
+	mainGui.Position = UDim2.new(0.5, 0, 0.576576591, 0)
 	mainGui.Size = UDim2.new(0, 436, 0, 188)
 	mainGui.Visible = false
-	mainGui.AnchorPoint = Vector2.new(0.5 , 0.5)
 
 	keybin.Name = "keybin"
 	keybin.Parent = mainGui
@@ -243,12 +250,13 @@ pcall(function()
 
 	mathFrame.Name = "mathFrame"
 	mathFrame.Parent = MainFrame
+	mathFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	mathFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	mathFrame.BorderSizePixel = 0
-	mathFrame.Position = UDim2.new(0, 0, 0.153153151, 0)
+	mathFrame.ClipsDescendants = true
+	mathFrame.Position = UDim2.new(0.497706413, 0, 0.576576591, 0)
 	mathFrame.Size = UDim2.new(0, 436, 0, 188)
 	mathFrame.Visible = false
-	mathFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
 	answerbin.Name = "answerbin"
 	answerbin.Parent = mathFrame
@@ -316,7 +324,7 @@ pcall(function()
 
 	UICorner.Parent = bar
 
-	-- Scripts:
+
 
 	MainFrame.Active = true
 	MainFrame.Selectable = true
