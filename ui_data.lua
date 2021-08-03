@@ -359,7 +359,7 @@ pcall(function()
 	loadingFrame:Destroy()
 	
 	MainFrame.ClipsDescendants = true
-	local startingPos = UDim2.new(0.5, 0,0.577, 0)
+	local startingPos = UDim2.new(1.5, 0,0.577, 0)
 	toPosition = UDim2.new(0.5, 0,0.577, 0)
 	
 	if customKey == true then
