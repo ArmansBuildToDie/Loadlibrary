@@ -88,7 +88,7 @@ function tween(obj, sec, sty, dir, custom)
 	tween:Create(obj, TweenInfo.new(sec, Enum.EasingStyle[sty], Enum.EasingDirection[dir]),custom):Play()
 end
 
-function ui:begin_task(data)
+--function ui:begin_task(data)
 	print("begun UI data task")
 	data = _G.settings
 	
@@ -528,6 +528,6 @@ function ui:begin_task(data)
 			end
 		end
 	end)
-end
+--end
 
 return ui;
