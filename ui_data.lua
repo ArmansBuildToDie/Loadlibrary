@@ -526,7 +526,7 @@ end
 				wait(3)
 				keybin.Text = ""
 			end
-		end
+		end;
 	end)
 --end
 
