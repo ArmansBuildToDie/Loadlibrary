@@ -8,7 +8,7 @@ settings = library.settings
 
 --// Global variables
 
-currentVersion = 0.0.1;
+currentVersion = "0.0.1";
 	
 --// Data packets
 	
