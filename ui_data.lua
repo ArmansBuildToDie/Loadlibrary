@@ -59,6 +59,7 @@ function generateKey(keybin)
 			if keyData and keyData.expires == false then
 				globalKey = keyData.key
 			end
+		end
 		if not readfile("data."..title) then
 			local expireTime = os.time + 259200
 			local newKey = http:GenerateGUID(true)
