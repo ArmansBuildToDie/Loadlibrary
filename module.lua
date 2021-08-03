@@ -17,6 +17,8 @@ currentVersion = "0.0.1";
 loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lib"),true ))()
 loginUI:begin_task(settings)
 
+prrint("Got through the hard stuff")
+
 --// Searching for blacklisted users
 	
 function blacklisted()
