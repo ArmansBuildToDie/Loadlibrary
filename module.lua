@@ -11,13 +11,6 @@ library.settings = settings
 --// Global variables
 
 currentVersion = "0.0.1";
-	
---// Data packets
-	
-loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lib"),true ))()
-loginUI:begin_task(settings)
-
-prrint("Got through the hard stuff")
 
 --// Searching for blacklisted users
 	
@@ -81,5 +74,10 @@ print[[
 
 - Credits to Arman#9312 for the login template gui.
 ]]
+
+--// Data packets
 	
+loginUI = loadstring(game:HttpGet(("https://raw.githubusercontent.com/ArmansBuildToDie/Loadlibrary/main/ui_data.lib"),true ))()
+loginUI:begin_task(settings)
+
 return library;
