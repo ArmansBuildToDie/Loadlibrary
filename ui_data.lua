@@ -365,16 +365,17 @@ pcall(function()
 	loadingFrame:Destroy()
 	
 	MainFrame.ClipsDescendants = true
-	local startingPos = UDim2.new(1.5, 0,0.577, 0)
-	toPosition = UDim2.new(0.5, 0,0.577, 0)
+	
+	local onScreen = UDim2.new(0.5, 0,0.577, 0)
+	local offScreen = UDim2.new(1.5, 0,0.577, 0)
 	
 	if customKey == true then
 		getKey:Destroy()
 	end
-	mainGui.Position = startingPos
+	mainGui.Position = offScreen
 	mainGui.Visible = true
 	
-	tween(mainGui, .3, "Bounce", "In", {Position = UDim2.new(toPosition)})
+	tween(mainGui, .3, "Bounce", "In", {Position = onScreen})
 	
 	getKey.MouseButton1Down:Connect(function()
 		if customKey == false then
@@ -411,12 +412,12 @@ pcall(function()
 					if keybin.Text == respitory.key or keyIsCorrect == true then
 						
 						if twoStep == true then
-							tween(mainGui, .4, "Bounce", "Out", {Position = UDim2.new(1, 0,0.153, 0)})
+							tween(mainGui, .4, "Bounce", "Out", {Position = offScreen})
 							
-							mathFrame.Position = UDim2.new(1, 0,0.153, 0)
+							mathFrame.Position = offScreen
 							mathFrame.Visible = true
 							wait(.4)
-							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0.5, 0,0.577, 0)})
+							tween(mathFrame, .4, "Bounce", "Out", {Position = onScreen})
 							wait(.4)
 							
 							local operators = {"*", "/", "+", "-"}
@@ -441,12 +442,12 @@ pcall(function()
 							
 							answerbin.FocusLost:Connect(function()
 								if answer and answerbin.Text == answer then
-									tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(1, 0,0.153, 0)})
+									tween(mathFrame, .4, "Bounce", "Out", {Position = offScreen})
 									wait(.4)
 									getgenv().loadClick()
 									
 									local small = UDim2.new(0.5, 0,0.319, 0)
-									tween(MainFrame, .4, "Bounce", "Out", {Size = UDim2.new(small)})
+									tween(MainFrame, .4, "Bounce", "Out", {Size = small})
 									wait(.4)
 									logGUi:Destroy()
 								end
@@ -455,7 +456,7 @@ pcall(function()
 							getgenv().loadClick()
 
 							local small = UDim2.new(0.5, 0,0.319, 0)
-							tween(MainFrame, .4, "Bounce", "Out", {Size = UDim2.new(small)})
+							tween(MainFrame, .4, "Bounce", "Out", {Size = small})
 							wait(.4)
 							logGUi:Destroy()
 						end
@@ -465,24 +466,24 @@ pcall(function()
 				if respitory.expires == false then
 					if keybin.Text == respitory.key or keyIsCorrect == true then
 						if twoStep == true then
-							tween(mainGui, .4, "Bounce", "Out", {Position = UDim2.new(1, 0,0.153, 0)})
-
-							mathFrame.Position = UDim2.new(1, 0,0.153, 0)
+							tween(mainGui, .4, "Bounce", "Out", {Position = offScreen})
+							
+							mathFrame.Position = offScreen
 							mathFrame.Visible = true
 							wait(.4)
-							tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(0.5, 0,0.577, 0)})
+							tween(mathFrame, .4, "Bounce", "Out", {Position = onScreen})
 							wait(.4)
-
+							
 							local operators = {"*", "/", "+", "-"}
 							local generated = math.random(1, 4)
 							generated = operators[generated]
-
+							
 							local a = math.random(7,30)
 							local b = math.random(6,25)
 							information_4.Text = ""..a.." "..generated.." "..b
-
+							
 							local answer
-
+							
 							if generated == "*" then
 								answer = a * b
 							elseif generated == "/" then
@@ -492,15 +493,15 @@ pcall(function()
 							elseif answer == "-" then
 								answer = a - b
 							end
-
+							
 							answerbin.FocusLost:Connect(function()
 								if answer and answerbin.Text == answer then
-									tween(mathFrame, .4, "Bounce", "Out", {Position = UDim2.new(1, 0,0.153, 0)})
+									tween(mathFrame, .4, "Bounce", "Out", {Position = offScreen})
 									wait(.4)
 									getgenv().loadClick()
-
+									
 									local small = UDim2.new(0.5, 0,0.319, 0)
-									tween(MainFrame, .4, "Bounce", "Out", {Size = UDim2.new(small)})
+									tween(MainFrame, .4, "Bounce", "Out", {Size = small})
 									wait(.4)
 									logGUi:Destroy()
 								end
@@ -509,7 +510,7 @@ pcall(function()
 							getgenv().loadClick()
 
 							local small = UDim2.new(0.5, 0,0.319, 0)
-							tween(MainFrame, .4, "Bounce", "Out", {Size = UDim2.new(small)})
+							tween(MainFrame, .4, "Bounce", "Out", {Size = small})
 							wait(.4)
 							logGUi:Destroy()
 						end
@@ -523,6 +524,64 @@ pcall(function()
 				keybin.Text = ""
 			end
 		end;
+				
+		
+		if customKey == true then
+			if keybin.Text = customPass then
+				if keybin.Text == respitory.key or keyIsCorrect == true then
+						
+						if twoStep == true then
+							tween(mainGui, .4, "Bounce", "Out", {Position = offScreen})
+							
+							mathFrame.Position = offScreen
+							mathFrame.Visible = true
+							wait(.4)
+							tween(mathFrame, .4, "Bounce", "Out", {Position = onScreen})
+							wait(.4)
+							
+							local operators = {"*", "/", "+", "-"}
+							local generated = math.random(1, 4)
+							generated = operators[generated]
+							
+							local a = math.random(7,30)
+							local b = math.random(6,25)
+							information_4.Text = ""..a.." "..generated.." "..b
+							
+							local answer
+							
+							if generated == "*" then
+								answer = a * b
+							elseif generated == "/" then
+								answer = a / b
+							elseif generated == "+" then
+								answer = a + b
+							elseif answer == "-" then
+								answer = a - b
+							end
+							
+							answerbin.FocusLost:Connect(function()
+								if answer and answerbin.Text == answer then
+									tween(mathFrame, .4, "Bounce", "Out", {Position = offScreen})
+									wait(.4)
+									getgenv().loadClick()
+									
+									local small = UDim2.new(0.5, 0,0.319, 0)
+									tween(MainFrame, .4, "Bounce", "Out", {Size = small})
+									wait(.4)
+									logGUi:Destroy()
+								end
+							end)
+						else
+							getgenv().loadClick()
+
+							local small = UDim2.new(0.5, 0,0.319, 0)
+							tween(MainFrame, .4, "Bounce", "Out", {Size = small})
+							wait(.4)
+							logGUi:Destroy()
+						end
+					end			
+			end
+		end
 	end)
 end)
 return ui;
