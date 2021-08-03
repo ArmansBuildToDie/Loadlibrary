@@ -1,3 +1,4 @@
+
 repeat wait() until game:IsLoaded()
 
 local ui = {
@@ -453,40 +454,41 @@ pcall(function()
 	keybin.FocusLost:Connect(function()
 		if customKey == false then
 			if	readfile("data."..title) then
-				local respitory = readfile("data."..title)
-				
-				if os.time > respitory.expireDate and respitory.expires == true then
-					keybin.Text = "Key expired! Please generate a new one."
+					local respitory = readfile("data."..title)
+
+					if os.time > respitory.expireDate and respitory.expires == true then
+						keybin.Text = "Key expired! Please generate a new one."
+
+						wait(3)
+						keybin.Text = ""
+					elseif os.time < respitory.expireData and respitory.expires == true then
+						if keybin.Text == respitory.key or keyIsCorrect == true then
+							verifyCheck()
+						end
+					end
+
+					if respitory.expires == false then
+						if keybin.Text == respitory.key or keyIsCorrect == true then
+							verifyCheck()
+					end
+
+				else
+					keybin.Text = "Couldn't find key data! Did you generate a key?"
 
 					wait(3)
 					keybin.Text = ""
-				elseif os.time < respitory.expireData and respitory.expires == true then
-					if keybin.Text == respitory.key or keyIsCorrect == true then
-						verifyCheck()
-					end
 				end
-				
-				if respitory.expires == false then
-					if keybin.Text == respitory.key or keyIsCorrect == true then
-						verifyCheck()
-				end
-				
-			else
-				keybin.Text = "Couldn't find key data! Did you generate a key?"
-				
-				wait(3)
-				keybin.Text = ""
-			end
-		end;
+			end;
 				
 		
-		if customKey == true then
-			if keybin.Text == customPass then
-				if keybin.Text == respitory.key or keyIsCorrect == true then
-					verifyCheck()		
-				end	
+			if customKey == true then
+				if keybin.Text == customPass then
+					if keybin.Text == respitory.key or keyIsCorrect == true then
+						verifyCheck()		
+					end	
+				end
 			end
 		end
-	end
+	end)
 end)
 return ui;
