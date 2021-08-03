@@ -198,6 +198,7 @@ end
 	mainGui.Position = UDim2.new(0, 0, 0.153153151, 0)
 	mainGui.Size = UDim2.new(0, 436, 0, 188)
 	mainGui.Visible = false
+	mainGui.AnchorPoint = Vector2.new(0.5 , 0.5)
 
 	keybin.Name = "keybin"
 	keybin.Parent = mainGui
@@ -250,6 +251,7 @@ end
 	mathFrame.Size = UDim2.new(0, 436, 0, 188)
 	mathFrame.Visible = false
 	mathFrame.AnchorPoint = Vector3.new(0.5, 0.5)
+
 	answerbin.Name = "answerbin"
 	answerbin.Parent = mathFrame
 	answerbin.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -326,7 +328,7 @@ end
 	
 	local baseSize = UDim2.new(0, 16,0, 15)
 	local baseColor = Color3.fromRGB(53, 53, 53)
-	
+	print("loaded this part or something")
 	for i = 1,3 do
 		tween(img3, .4, "Quart", "InOut", {Size = UDim2.new(0, 16,0, 28), BackgroundColor3 = Color3.new(0.556863, 0.996078, 1)})
 		wait(.4)
