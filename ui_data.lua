@@ -528,3 +528,5 @@ function ui:begin_task(data)
 		end
 	end)
 end
+
+return ui;
