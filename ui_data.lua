@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded()
-
+print("Here")
 local ui = {
 	settings = {}
 }
