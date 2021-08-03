@@ -6,7 +6,7 @@ local ui = {
 
 --// Setup variables
 
-settings = ui.settings
+settings = _G.settings
 
 wait()
 
@@ -89,7 +89,7 @@ function tween(obj, sec, sty, dir, custom)
 end
 
 function ui:begin_task(data)
-	ui.settings = data
+	data = _G.settings
 	
 	
 
