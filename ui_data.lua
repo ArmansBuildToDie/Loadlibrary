@@ -322,9 +322,6 @@ pcall(function()
 	MainFrame.Active = true
 	MainFrame.Selectable = true
 	MainFrame.Draggable = true
-		
-	coroutine.wrap(BIFP_fake_script)()
-	
 	
 	Title.text = title.." by "..credits
 	
