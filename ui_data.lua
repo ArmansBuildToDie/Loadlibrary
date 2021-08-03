@@ -77,10 +77,7 @@ function generateKey(keybin)
 	if error then
 		local player = game:GetService("Players").LocalPlayer
 
-		player:Kick([[
-				Your exploit does not support "writefile" nor "readfile".
-				Please contact the script owner to make a custom key, instead.
-		]])
+		print(error)
 	end
 end
 
