@@ -82,6 +82,7 @@ function generateKey(keybin)
 		
 			
 			local newKey = http:GenerateGUID(true)
+			print("e")
 			local data = {
 				key = newKey;		
 				expires = keyExpires;
