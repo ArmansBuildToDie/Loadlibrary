@@ -81,8 +81,8 @@ function generateKey(keybin)
 			local expireTime = os.time() + 259200
 		
 			print"U"
-			local newKey = http:GenerateGUID(true)
-			print(newKey)
+			print( http:GenerateGUID(true))
+			
 			print("e")
 			local data = {
 				key = newKey;		
