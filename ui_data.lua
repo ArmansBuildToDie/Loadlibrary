@@ -80,7 +80,7 @@ function generateKey(keybin)
 		s, check = pcall(function()
 			local expireTime = os.time() + 259200
 		
-			
+			print"U"
 			local newKey = http:GenerateGUID(true)
 			print("e")
 			local data = {
