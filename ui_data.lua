@@ -30,9 +30,9 @@ function generateKey(keybin)
 	local _,error = pcall(function()
 		local http = game:GetService("HttpService")
 		
-		if	readfile("data.".. tostring(title)) then
+		if	readfile("data."..tostring(title)) then
 
-			local respitory = readfile("data.".. tostring(title))
+			local respitory = readfile("data."..tostring(title))
 			local keyData = http:JSONDecode(respitory) 
 
 			if keyData and keyData.expires == true then
@@ -50,7 +50,7 @@ function generateKey(keybin)
 						};
 						data = http:JSONEncode(data)
 
-						writefile("data.".. tostring(title), data)
+						writefile("data."..tostring(title), ""..data.."")
 
 						setclipboard(newKey)	
 						keybin.Text = newKey
@@ -86,7 +86,7 @@ function generateKey(keybin)
 			};
 			data = http:JSONEncode(data)
 				
-			writefile("data.".. tostring(title), data)
+			writefile("data."..tostring(title), ""..data.."")
 
 			setclipboard(newKey)	
 			keybin.Text = newKey
@@ -102,11 +102,6 @@ end
 	
 	
 pcall(function()	
-	-- Gui to Lua
-	-- Version: 3.2
-
-	-- Instances:
-
 	local logGUi = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local Title = Instance.new("TextLabel")
