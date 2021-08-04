@@ -96,7 +96,11 @@ function generateKey(keybin)
 		end)
 		
 		if check then
-			player:Kick([[ Your exploit must support 'writefile' and 'readfile'. Contact and ask the creator to make a custom key, intstead. ]])
+			player:Kick([[ 
+				
+				Your exploit must support 'writefile' and 'readfile'. 
+				Contact and ask the creator to make a custom key, intstead. 
+			]])
 		end
 	end
 end
