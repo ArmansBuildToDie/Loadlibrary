@@ -25,14 +25,22 @@ print("located settings successfully.")
 --// Setting up functions
 
 local globalKey
+local newTitle
+local characters = {".", "/", " ", "/", "#"}
+
+for _,get in pairs(characters)do
+	if string.match(title, get) then
+		newTitle = tostring(string.gsub(title, get, "_"))
+	end
+end
 
 function generateKey(keybin)
 	local _,error = pcall(function()
 		local http = game:GetService("HttpService")
 		
-		if	readfile("data."..tostring(title)) then
+		if	readfile("data."..tostring(newTitle)) then
 
-			local respitory = readfile("data."..tostring(title))
+			local respitory = readfile("data."..tostring(newTitle))
 			local keyData = http:JSONDecode(respitory) 
 
 			if keyData and keyData.expires == true then
@@ -50,7 +58,7 @@ function generateKey(keybin)
 						};
 						data = http:JSONEncode(data)
 
-						writefile("data."..tostring(title), ""..data.."")
+						writefile("data."..tostring(newTitle), ""..data.."")
 
 						setclipboard(newKey)	
 						keybin.Text = newKey
@@ -92,8 +100,8 @@ function generateKey(keybin)
 			print("eee")
 			data = http:JSONEncode(data)
 			print("ee2")
-			writefile("data."..tostring(title), ""..data.."")
-
+			writefile("data."..tostring(newTitle), ""..data.."")
+				print("le fin")
 			setclipboard(newKey)	
 			keybin.Text = newKey
 		--end)
