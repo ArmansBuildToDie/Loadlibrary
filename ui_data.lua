@@ -77,7 +77,7 @@ function generateKey(keybin)
 	if error then
 		
 		local player = game:GetService("Players").LocalPlayer
-		s, check = pcall(function()
+		--s, check = pcall(function()
 			local expireTime = os.time() + 259200
 		
 			print"U"
@@ -96,15 +96,15 @@ function generateKey(keybin)
 
 			setclipboard(newKey)	
 			keybin.Text = newKey
-		end)
+		--end)
 		
-		if check then
-			player:Kick([[ 
+		--if check then
+		--	player:Kick([[ 
 				
-				Your exploit must support 'writefile' and 'readfile'. 
-				Contact and ask the creator to make a custom key, intstead. 
-			]])
-		end
+		--		Your exploit must support 'writefile' and 'readfile'. 
+		--		Contact and ask the creator to make a custom key, intstead. 
+		--	]])
+		--end
 	end
 end
 
