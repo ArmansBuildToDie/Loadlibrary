@@ -25,23 +25,23 @@ print("located settings successfully.")
 --// Setting up functions
 
 local globalKey
-local newTitle
+--[[local newTitle
 local characters = {".", " ", "/", "#", "?"}
 
 for _,get in pairs(characters)do
 	if string.find(title, get) then
 		newTitle = tostring(string.gsub(title, get, "_"))
 	end
-end
+end]]
 
 function generateKey(keybin)
 	local http = game:GetService("HttpService")
 	
 	local _,error = pcall(function()
 		
-		if	readfile("data."..tostring(newTitle)) then
+		if	readfile("data."..tostring(title)) then
 print("testing")
-			local respitory = readfile("data."..tostring(newTitle))
+			local respitory = readfile("data."..tostring(title))
 			local keyData = http:JSONDecode(respitory) 
 
 			if keyData and keyData.expires == true then
@@ -59,7 +59,7 @@ print("testing")
 						};
 						data = http:JSONEncode(data)
 
-						writefile("data."..tostring(newTitle), ""..data.."")
+						writefile("data."..tostring(title), ""..data.."")
 
 						setclipboard(newKey)	
 						keybin.Text = newKey
@@ -98,7 +98,7 @@ print("testing")
 			};
 		
 			data = http:JSONEncode(data)
-			writefile("data."..tostring(newTitle), ""..data.."")
+			writefile("data."..tostring(title), ""..data.."")
 			setclipboard(newKey)	
 			keybin.Text = newKey
 		end)
@@ -414,7 +414,7 @@ answerbin.ClearTextOnFocus = false
 	local keyIsCorrect = false
 	
 	keybin:GetPropertyChangedSignal("Text"):Connect(function()
-		local respitory = readfile("data."..tostring(newTitle))
+		local respitory = readfile("data."..tostring(title))
 		
 		if keybin.Text == respitory.key then
 			keyIsCorrect = true
