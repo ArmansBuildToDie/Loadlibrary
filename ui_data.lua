@@ -25,7 +25,7 @@ print("located settings successfully.")
 --// Setting up functions
 
 local globalKey
---[[local newTitle
+--[[
 local characters = {".", " ", "/", "#", "?"}
 
 for _,get in pairs(characters)do
