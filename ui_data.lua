@@ -26,7 +26,7 @@ print("located settings successfully.")
 
 local globalKey
 local newTitle
-local characters = {".", "/", " ", "/", "#"}
+local characters = {".", "/", " ", "/", "#", "?", "\", "|", "$", "%", "@", "!", "+", "=", "-", "*", "~", "`", "^", "&", "(", ")", "[", "]", "{", "}", "<", ">"}
 
 for _,get in pairs(characters)do
 	if string.match(title, get) then
