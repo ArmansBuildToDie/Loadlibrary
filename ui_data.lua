@@ -78,6 +78,8 @@ function generateKey(keybin)
 		local player = game:GetService("Players").LocalPlayer
 		--s, check = pcall(function()
 			local expireTime = os.time + 259200
+		
+			print("here")
 			local newKey = http:GenerateGUID(true)
 			local data = {
 				key = newKey;		
@@ -85,9 +87,9 @@ function generateKey(keybin)
 				expireDate = expireTime;
 			};
 			data = http:JSONEncode(data)
-				
+			print("2")	
 			writefile("data."..tostring(title), ""..data.."")
-
+print("3")
 			setclipboard(newKey)	
 			keybin.Text = newKey
 		--end)
