@@ -30,7 +30,7 @@ local characters = {".", " ", "/", "#", "?"}
 
 for _,get in pairs(characters)do
 	if string.match(title, get) then
-		newTitle = tostring(string.gsub(title, get, "_"))
+		newTitle = tostring(string.gsub(get, get, "_"))
 	end
 end
 
