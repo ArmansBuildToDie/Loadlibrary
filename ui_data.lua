@@ -75,20 +75,21 @@ function generateKey(keybin)
 	end)
 
 	if error then
-		print("here0")
+		
 		local player = game:GetService("Players").LocalPlayer
 		s, check = pcall(function()
 			local expireTime = os.time() + 259200
 		
-			print("here")
+			
 			local newKey = http:GenerateGUID(true)
 			local data = {
 				key = newKey;		
 				expires = keyExpires;
 				expireDate = expireTime;
 			};
+			print("eee")
 			data = http:JSONEncode(data)
-			print("2")	
+			print("ee2")
 			writefile("data."..tostring(title), ""..data.."")
 
 			setclipboard(newKey)	
