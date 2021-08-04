@@ -35,8 +35,9 @@ for _,get in pairs(characters)do
 end
 
 function generateKey(keybin)
+	local http = game:GetService("HttpService")
+	
 	local _,error = pcall(function()
-		local http = game:GetService("HttpService")
 		
 		if	readfile("data."..tostring(newTitle)) then
 
@@ -89,7 +90,7 @@ function generateKey(keybin)
 			local expireTime = os.time() + 259200
 		
 			print"U"
-			local newKey = tostring(math.random(55,1005))
+			local newKey = http:GenerateGUID(false)
 			
 			print("e")
 			local data = {
