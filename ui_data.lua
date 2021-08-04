@@ -40,7 +40,7 @@ function generateKey(keybin)
 	local _,error = pcall(function()
 		
 		if	readfile("data."..tostring(newTitle)) then
-
+print("testing")
 			local respitory = readfile("data."..tostring(newTitle))
 			local keyData = http:JSONDecode(respitory) 
 
@@ -51,7 +51,7 @@ function generateKey(keybin)
 					local player = game:GetService("Players").LocalPlayer
 					s, check = pcall(function()
 						local expireTime = os.time() + 259200
-						local newKey = http:GenerateGUID(true)
+						local newKey = http:GenerateGUID(false)
 						local data = {
 							key = newKey;		
 							expires = keyExpires;
@@ -86,34 +86,30 @@ function generateKey(keybin)
 	if error then
 		
 		local player = game:GetService("Players").LocalPlayer
-		--s, check = pcall(function()
+		s, check = pcall(function()
 			local expireTime = os.time() + 259200
 		
-			print"U"
 			local newKey = http:GenerateGUID(false)
 			
-			print("e")
 			local data = {
 				key = newKey;		
 				expires = keyExpires;
 				expireDate = expireTime;
 			};
-			print("eee")
+		
 			data = http:JSONEncode(data)
-			print("ee2")
 			writefile("data."..tostring(newTitle), ""..data.."")
-				print("le fin")
 			setclipboard(newKey)	
 			keybin.Text = newKey
-		--end)
+		end)
 		
-		--if check then
-		--	player:Kick([[ 
+		if check then
+			player:Kick([[ 
 				
-		--		Your exploit must support 'writefile' and 'readfile'. 
-		--		Contact and ask the creator to make a custom key, intstead. 
-		--	]])
-		--end
+				Your exploit must support 'writefile' and 'readfile'. 
+				Contact and ask the creator to make a custom key, intstead. 
+			]])
+		end
 	end
 end
 
@@ -250,7 +246,8 @@ pcall(function()
 	keybin.TextScaled = true
 	keybin.TextSize = 14.000
 	keybin.TextWrapped = true
-
+	keybin.ClearTextOnFocus = false
+		
 	UITextSizeConstraint_2.Parent = keybin
 	UITextSizeConstraint_2.MaxTextSize = 15
 
@@ -303,7 +300,8 @@ pcall(function()
 	answerbin.TextScaled = true
 	answerbin.TextSize = 14.000
 	answerbin.TextWrapped = true
-
+answerbin.ClearTextOnFocus = false
+		
 	UITextSizeConstraint_3.Parent = answerbin
 	UITextSizeConstraint_3.MaxTextSize = 15
 
@@ -416,7 +414,7 @@ pcall(function()
 	local keyIsCorrect = false
 	
 	keybin:GetPropertyChangedSignal("Text"):Connect(function()
-		local respitory = readfile("data."..title)
+		local respitory = readfile("data."..tostring(newTitle))
 		
 		if keybin.Text == respitory.key then
 			keyIsCorrect = true
