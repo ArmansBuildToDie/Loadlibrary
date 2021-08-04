@@ -60,7 +60,13 @@ function generateKey(keybin)
 			if keyData and keyData.expires == false then
 				globalKey = keyData.key
 			end
-		elseif readfile("data."..title) then
+			
+		end
+	end)
+
+	if error then
+		local player = game:GetService("Players").LocalPlayer
+		s, check = pcall(function()
 			local expireTime = os.time + 259200
 			local newKey = http:GenerateGUID(true)
 			local data = {
@@ -73,13 +79,13 @@ function generateKey(keybin)
 
 			setclipboard(newKey)	
 			keybin.Text = newKey
+		end)
+		if check then
+			player:Kick([[
+				Your exploit must support 'writefile' and 'readfile'.
+				Contact and ask the creator to make a custom key, intstead.
+			]])	
 		end
-	end)
-
-	if error then
-		local player = game:GetService("Players").LocalPlayer
-
-		print(error)
 	end
 end
 
