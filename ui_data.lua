@@ -30,28 +30,38 @@ function generateKey(keybin)
 	local _,error = pcall(function()
 		local http = game:GetService("HttpService")
 		
-		if	readfile("data."..title) then
+		if	readfile("data.".. tostring(title)) then
 
-			local respitory = readfile("data."..title)
+			local respitory = readfile("data.".. tostring(title))
 			local keyData = http:JSONDecode(respitory) 
 
 			if keyData and keyData.expires == true then
 				if os.time > keyData.expireData then
 					keybin.Text = "You previous key expired; generated a new one. (copied to clipboard)"
 
-					local expireTime = os.time + 259200
+					local player = game:GetService("Players").LocalPlayer
+					s, check = pcall(function()
+						local expireTime = os.time + 259200
+						local newKey = http:GenerateGUID(true)
+						local data = {
+							key = newKey;		
+							expires = keyExpires;
+							expireDate = expireTime;
+						};
+						data = http:JSONEncode(data)
 
-					local newKey = http:GenerateGUID(true)
-					local data = {
-						key = newKey;		
-						expires = keyExpires;
-						expireDate = expireTime
-					};
+						writefile("data.".. tostring(title), data)
 
-					writefile("data."..title, data)
+						setclipboard(newKey)	
+						keybin.Text = newKey
+					end)
+					if check then
+						player:Kick([[
 
-					setclipboard(newKey)
-					
+							Your exploit must support 'writefile' and 'readfile'.
+							Contact and ask the creator to make a custom key, intstead.
+						]])	
+					end
 					wait(3.5)
 					keybin.Text = newKey
 				end
@@ -74,8 +84,9 @@ function generateKey(keybin)
 				expires = keyExpires;
 				expireDate = expireTime;
 			};
-
-			writefile("data."..title, data)
+			data = http:JSONEncode(data)
+				
+			writefile("data.".. tostring(title), data)
 
 			setclipboard(newKey)	
 			keybin.Text = newKey
